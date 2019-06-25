@@ -1,25 +1,25 @@
 package com.epam.app;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class CheckForATest {
 	CheckForA checkForA;
 
-	@Before
+	@BeforeEach
 	public void init()
 	{
 		checkForA = new CheckForA();
 	}
 	@Test
 	public void testRemoveA() {
-		assertEquals("test fails for ABCD",checkForA.removeA("ABCD"),"BCD");
-		assertEquals("test fails for AACD",checkForA.removeA("AACD"),"CD");
-		assertEquals("test fails for BACD",checkForA.removeA("BACD"),"BCD");
-		assertEquals("test fails for BBAA",checkForA.removeA("BBAA"),"BBAA");
-		assertEquals("test fails for AABAA",checkForA.removeA("AABAA"),"BAA");
+		assertEquals("BCD",checkForA.removeA("ABCD"));
+		assertEquals("CD",checkForA.removeA("AACD"));
+		assertEquals("BCD",checkForA.removeA("BACD"));
+		assertEquals("BBAA",checkForA.removeA("BBAA"));
+		assertEquals("BAA",checkForA.removeA("AABAA"));
 	}
 
 }
